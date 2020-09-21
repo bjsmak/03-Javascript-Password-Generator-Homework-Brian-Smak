@@ -5,7 +5,18 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+   //Conditionals for generating password
+  var length = Number(prompt("Please specify password length"));
+  if (length >= 8 && length <= 128) {
 
+    var promptUpper = confirm("Would you like to include Uppercase Letters?");
+    var promptLower = confirm("Would you like to include Lowercase Letters?");
+    var promptNum = confirm("Would you like to include Numbers?");
+    var promptSpecChar = confirm("Would you like to include Special Characters?");
+ } else {alert('Please specify between a number between 8 and 128 characters');}
+
+ if (promptUpper !== true && promptLower !== true && promptNum !== true && promptSpecChar !== true){ alert('You must choose at least one type of condition!');}
+  //console.log(length);  
   passwordText.value = password;
 
 }
@@ -13,13 +24,10 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// Functions for Random Numbers
 
-
-// Functions
-
-/*function numberRandom() {
+function numberRandom() {
   return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-  console.log(numberRandom);
 }
 
 function lowerCaseRandom() {
@@ -32,47 +40,45 @@ function upperCaseRandom() {
 
 function specialCharRandom() {
   var specialChar = '!@#$%^&*<>~'
-  return specialChar[Math.floor(Math.random() * specialChar.length)]
-}****/
-
- // Start variables
-
- var promptLength = prompt("Please specify password length");
- var upper = "ABCDEFHGIJKLMNOPQRSTUVWXYZ";
- var lower = "abcdefghijklmnopqrstuvwxyz";
- var number = "0123456789";
- var specialChar = "!@#$%^&*()_-=+[]{}";
- var initialPass = '';
+  return specialChar[Math.floor(Math.random() * specialChar.length)];
+}
 
 
- //Conditionals
+ //Logging choices into generatePassword function
+ var resultEl = document.getElementById('#password');
 
- if (promptLength >= 8 && promptLength <= 128) {
+ document.getElementById('#generate').addEventListener('click', () => {
 
-   var promptUpper = confirm("Would you like to include Uppercase Letters?");
-   var promptLower = confirm("Would you like to include Lowercase Letters?");
-   var promptNum = confirm("Would you like to include Numbers?");
-   var promptSpecChar = confirm("Would you like to include Special Characters?");
 
-   if (promptUpper === true) {
-      initialPass += upper;
-   }
-   if (promptLower === true) {
-      initialPass += lower;
-    }
-    if (promptNum === true) {
-      initialPass += number;    
-    }
-    if (promptSpecChar === true) {
-      initialPass += specialChar;    
+
+ })
+
+
+ //Convert functions into Objects
+var randomAll = {
+  number: numberRandom,
+  lower: lowerCaseRandom,
+  upper: upperCaseRandom,
+  special: specialCharRandom
+};
+
+//Generate Password function
+function generatePassword(upper, lower, number, special, length) {
+  let initialPassword = '';
+  var typesCount = upper + lower + number + special;
+  var typesArr = [{upper}, {lower}, {number}, {special}].filter(item => Object.values(item)[0]);
+
+  //Loop to generate array
+  for(let i=0; i < length; i+=typesCount) {
+    typesArr.forEach(type => {
+        var typeLoop = Object.keys(type)[0];
+        initialPassword += randomAll[typeLoop]();
+    });
   }
-  
-  
-  if (promptUpper !== true && promptLower !== true && promptNum !== true && promptSpecChar !== true){ alert('You must choose at least one type of condition!');}
 
- }
+  var finalPassword = initialPassword.slice(0, length);
 
- else {alert('Please specify between a number between 8 and 128 characters');}
-
+  return finalPassword;
+}
 
 
