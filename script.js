@@ -42,19 +42,19 @@ var generatePassword = function() {
         
 
   //console.log(randomPass);
-  console.log(length);
+  //console.log(length);
   passwordFinal = [];
   for (let i = 0; i < length; i++) {
     //FOR LOOP TO ADD RANDOM NUMBER FROM ARRAY BASED ON IF/ELSE CONDITIONALS, PUSH TO ARRAY AND JOIN TO STRING
     randomPass.join('');
     randomNum = randomPass[Math.floor(Math.random() * (randomPass.length-1))];
-    console.log(randomNum);
+    //console.log(randomNum);
     passwordFinal.push(randomNum);
     //console.log(passwordFinal);
     
   }
-  console.log(passwordFinal);
-  return passwordFinal.join("");
+  //console.log(passwordFinal);
+  return passwordFinal.join('');
 }
 
 
