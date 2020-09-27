@@ -9,7 +9,11 @@ By utilizing functions and conditionals and given a set of parameters, the text 
  <p>
  Next the client types in a number of characters in the password between 8 and 128. If outside of those values, an alert is given. Otherwise, confirms are brought up to confirm character conditions
  <p>
- 
+ ![passgen2](https://i.ibb.co/0rY4jgT/pass-gen-2.png)
+<p>
+Finally, the string of characters that meets the criteria identified by the client is displayed in the text box below.
+<p>
+![passgen3](https://i.ibb.co/FqfxkP5/pass-gen-3.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyNzQ1NDgzNV19
+eyJoaXN0b3J5IjpbNzg5Mjg2NzkxXX0=
 -->
