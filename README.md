@@ -15,5 +15,5 @@ Finally, the string of characters that meets the criteria identified by the clie
 <p>
 <img src='https://i.ibb.co/FqfxkP5/pass-gen-3.png' alt='passgen3'>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzg5Mjg2NzkxXX0=
+eyJoaXN0b3J5IjpbODY5NDI5MDIxLDc4OTI4Njc5MV19
 -->
