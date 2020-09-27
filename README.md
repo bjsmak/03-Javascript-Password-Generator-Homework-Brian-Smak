@@ -6,3 +6,6 @@ By utilizing functions and conditionals and given a set of parameters, the text 
   <p>
   First, the client clicks the button - the beginning state should be as below.<p>
   ![password_generator1](pass_gen_1.png?raw=true)
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNzI5NDI5MDE4XX0=
+-->
