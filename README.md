@@ -5,6 +5,7 @@ By utilizing functions and conditionals and given a set of parameters, the text 
   <p>
   <p>
   First, the client clicks the button - the beginning state should be as below.<p>![passgen1](https://ibb.co/jkG7hgb)
+ 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Mzk2Mjk3NThdfQ==
+eyJoaXN0b3J5IjpbLTEwODc3NjEyNF19
 -->
